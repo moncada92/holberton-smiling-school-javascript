@@ -1,0 +1,240 @@
+:root {
+  --color-primary: #C271FF;
+  --color-primary-dark: #9b55d1;
+  --color-bg-dark: #071629;
+  --color-success: #82D24F;
+}
+
+*{
+  font-family: "Source Sans Pro";
+}
+
+button:hover,
+button:active {
+  opacity: 0.9;
+}
+a.text-primary:hover{
+  color: var(--color-primary) !important;
+}
+header{
+  background: url('./images/pic_1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+header.pricing{
+  background: url('./images/pic_2.jpg');
+}
+header.courses{
+  background: url('./images/pic_3.jpg');
+}
+.bg-light{
+  background: none !important;
+}
+.bg-dark{
+  background: var(--color-bg-dark) !important;
+}
+.bg-primary{
+  background: var(--color-primary) !important;
+}
+.nav-link{
+  font-size: 12px;
+}
+.navbar-toggler, .navbar-toggler:focus{
+  border: none;
+  outline: none;
+}
+.title{
+  margin-top: 10rem;
+  font-size: 120px;
+}
+.title.pricing{
+  font-size: 60px;
+  margin-top: 0;
+}
+.subtitle{
+  margin-top: 8rem;
+}
+.subtitle span{
+  font-size: 2rem;
+}
+.btn-primary{
+  background: var(--color-primary);
+  border-radius: 22px;
+  border-color: var(--color-primary);
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  font-size: 14px;
+}
+.btn-primary:hover{
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+.text-primary{
+  color: var(--color-primary) !important;
+}
+.text-success{
+  color: var(--color-success) !important; 
+}
+.text-info{
+  color: var(--color-bg-dark) !important;
+}
+.last-content{
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+.carousel{
+  background: var(--color-primary);
+  padding: 5rem 0 3rem 0;
+}
+.carousel .icon{
+  font-size: 5rem;
+  color: #071629;
+}
+.carousel-control-next, .carousel-control-prev{
+  opacity: 0;
+}
+.container-carousel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.carousel blockquote{
+  font-size: 22px;
+}
+
+.carousel .card{
+  border: none;
+}
+.card.max-w{
+  min-width: 162px;
+}
+.card .name-profile{
+  font-size: 14px;
+}
+.container-lg.max{
+  max-width: 1280px;
+}
+.container-lg.max .container-carousel{
+  max-width: 1060px;
+}
+.container-lg.max .carousel-control-next, .container-lg.max .carousel-control-prev{
+  width: 10%;
+}
+.cont-play{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.footer-social span{
+  font-size: 2rem;
+}
+/* price */
+.price h2{
+  font-size: 44px;
+}
+.price button{
+  font-size: 14px;
+}
+.price p{
+  font-size: 12px;
+  font-weight: 300;
+}
+.checker{
+  font-size: 1.7rem;
+}
+.border-color{
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+h2.big{
+  font-size: 60px;
+}
+
+h2.courses {
+  font-family: "Coiny";
+  max-width: 480px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+.courses span{
+  font-family: "Coiny"
+}
+.form-header input, .form-header .form-control{
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-header label{
+  font-size: 12px;
+}
+.contselect i{
+  right: 14px;
+  top: 12px;
+}
+.contselect i.search{
+  right: auto;
+  top: 9px;
+  left: 8px;
+  font-size: 18px;
+}
+.contselect input{
+  padding-left: 2.3rem;
+}
+.contselect input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+.contselect input:focus {
+  box-shadow: none;
+}
+.contselect select{
+  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.contselect select:focus{
+  outline: none;
+  box-shadow: none;
+}
+.contselect select::-ms-expand {
+  display: none;
+}
+.courses .max-w{
+  width: 255px;
+  max-width: 255px;
+  min-width: 255px;
+}
+@media screen and (max-width: 768px) {
+  .navbar-brand{
+    margin: 0.7rem auto 0 auto;
+  }
+  .navbar-brand img{
+    display: block;
+    margin: 0 auto !important;
+  }
+  .title{
+    font-size: 5rem;
+  }
+  .card.max-w{
+    min-width: 302px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .courses .max-w{
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .title{
+    font-size: 3rem;
+  }
+  .carousel .icon{
+    margin-top: 5rem;
+  }
+
+}
+
