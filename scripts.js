@@ -158,8 +158,107 @@ $(document).ready( () => {
     slidesCards("prev", "latestVideosContent", dataLastestVideos);
   });
 
+
+  function fillInputs() {
+    $.ajax({
+      method: "GET",
+      url: "https://smileschool-api.hbtn.info/courses",
+      success: (data) => {
+        
+      }
+    }).done((data) => {
+      console.log(data);
+      data.topics.forEach((item, idx) => {
+        let option = $(`<option ${idx === 0 ? 'selected' : ''}> ${item} </option>`);
+        $("#topicInput").append(option)
+      })
+
+      data.sorts.forEach((item, idx) => {
+        let option = $(`<option ${idx === 0 ? 'selected' : ''}> ${item.replace("_", " ")} </option>`);
+        $("#sortbyInput").append(option);
+      })
+
+      $("#sortbyInput").change(() => getCourses());
+      $("#topicInput").change(() => getCourses());
+      $("#keywords").change((e) => {
+        e.preventDefault();
+        getCourses()
+      });
+
+      getCourses();
+
+    })
+  }
+
+  function getCourses() {
+    const search = $("#keywords").val();
+    const sortBy = $("#sortbyInput").val();
+    const topic = $("#topicInput").val();
+    console.log(search, sortBy, topic);
+
+    $.ajax({
+      method: "GET",
+      url: "https://smileschool-api.hbtn.info/courses",
+      data: {
+        q: search,
+        topic: topic,
+        sort: sortBy
+      }
+    })
+    .done((data) => {
+      $("#numberOfVideos").html(data.courses.length + " video(s)");
+      $("#results").html("");
+      data.courses.forEach(item => {
+        let card = 
+          '<div class="d-flex col-12 col-sm-6 col-md-4 col-lg-3 px-sm-0">' +
+            '<div class="card border-0 ml-2">' +
+              '<div class="d-flex align-items-center justify-content-center">' +
+                '<img src="' + item.thumb_url + '" alt="Video #1" class="card-img-top">' +
+                '<img src="images/play.png" alt="Video #1" class="position-absolute w-25">' +
+              '</div>' +
+              '<div class="card-body">' +
+                '<h5 class="card-title font-weight-bold text-dark">' + item.title + '</h5>' +
+              '</div>' +
+              '<ul class="list-group list-group-flush">' +
+                '<li class="list-group-item border-0 color-grey-smile">' + item['sub-title'] + '</li>' +
+                '<li class="list-group-item d-flex align-item-center border-0">' +
+                  '<img class="rounded-circle" src="' + item.author_pic_url + '" alt="Profile 1" width="30" height="30">' +
+                  '<p class="pl-3 color-smile my-auto">' + item.author + '</p>' +
+                '</li>' +
+                '<li class="list-group-item d-flex border-0">' +
+                  '<div class="col-8 text-left pl-0">' +
+                    '<img src="images/star_on.png" width="23">' +
+                    '<img src="images/star_on.png" width="23">' +
+                    '<img src="images/star_on.png" width="23">' +
+                    '<img src="images/star_on.png" width="23">' +
+                    '<img src="images/star_off.png" width="23">' +
+                  '</div>' +
+                  '<div class="col-4 color-smile text-right pt-1">' +
+                    '<span>' + item.duration + '</span>' +
+                  '</div>' +
+                '</li>' +
+              '</ul>' +
+            '</div>' +
+          '</div>';
+
+          $("#results").append(card);
+
+          $('.loader').hide();
+      });
+
+
+    })
+  }
+
+
+
+  if($('#courses')) {
+    fillInputs();
+  }
+
   loadCarouselVideos(BASE_URL+"popular-tutorials", "popularVideosContent", "loaderPopularVideos", dataPopularVideos);
   
   loadCarouselVideos(BASE_URL+"latest-videos", "latestVideosContent", "loaderLatestVideos", dataLastestVideos);
+
 
 })
