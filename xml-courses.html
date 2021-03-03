@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./images/icons/style.css">
+</head>
+<body>
+  <header class="courses pb-5">
+    <div class="container-lg">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" >
+          <span class="holberton_school-icon-menu"></span>
+        </button>
+        <a class="navbar-brand" href="./homepage.html">
+          <img src="./images/smile_off.png" class="mr-2" width="35px" alt="">
+          <img src="./images/logo.png" width="112" alt="">
+        </a>
+        
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white text-uppercase text-center mx-2 pb-0 text-primary border-bottom" href="./courses.html">Courses</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-white text-uppercase text-center mx-2 " href="./pricing.html">Pricing</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-white text-uppercase text-center mx-2" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+      <h2 class="courses font-weight-bolder text-white text-center pt-3 mt-3 pb-3">
+        « Don’t cry because it’s over.
+        <span class="text-primary">Smile</span> because it happened. »
+      </h2>
+    </div>
+    <div class="bg-primary py-4 mt-4">
+      <div class="container">
+        <form class="form-header">
+          <div class="form-row ">
+            <div class="form-group col-sm-12 col-md-4 text-white">
+              <label for="inputCity" class="text-uppercase">Keywords</label>
+              <div class="contselect position-relative">
+                <input type="text" class="form-control text-white"  id="keywords" aria-describedby="keywords" placeholder="Search by keywords">
+                <i class="search position-absolute holberton_school-icon-search_1"></i>
+              </div>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-12 text-white">
+              <label for="inputState" class="text-uppercase">Topic</label>
+              <div class="contselect position-relative">
+                <select id="topicInput" class="form-control text-white">
+                 
+                </select>
+                <i class="holberton_school-icon-arrow_5 position-absolute"></i>
+              </div>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-12 text-white">
+              <label for="inputState" class="text-uppercase">Sort By</label>
+              <div class="contselect position-relative">
+                <select id="sortbyInput" class="form-control text-white">
+                  
+                </select>
+                <i class="holberton_school-icon-arrow_5 position-absolute"></i>
+              </div>
+            </div>
+            
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section id="courses">
+    <div class="container py-5">
+      <p class="color-grey-smile" id="numberOfVideos"></p>
+      <div class="row py-4" id="results">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark py-2">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row py-5">
+        <div class="mb-4">
+          <img src="./images/smile_off.png" class="mr-2" width="35px" alt="">
+          <img src="./images/logo.png" width="112" alt="">
+        </div>
+        <div class="footer-social">
+          <span class="holberton_school-icon-ic_facebook text-white mx-1"></span>
+          <span class="holberton_school-icon-ic_twitter text-white mx-1"></span>
+          <span class="holberton_school-icon-ic_instagram text-white mx-1"></span>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-white-50 font-weight-light">©smileschool 2020</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <script type="application/javascript" src="./xml-scripts.js"></script>
+</body>
+</html>
